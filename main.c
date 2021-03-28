@@ -11,8 +11,6 @@ sbit LED=P1^7;
    lcd_test():
 	LCD test function that gets called when
 	'1' is received from UART
-	Prints "LCD Ok" on LCD. After 4 seconds
-	LCD is cleared
 ************************************************/
 void lcd_start(void)
 {
