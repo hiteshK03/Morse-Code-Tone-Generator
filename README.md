@@ -1,2 +1,2 @@
 # Morse-Code-Tone-Generator
-To generate tones for Morse Codes using PT-51
+Generate Morse code audio tones for a series of characters typed on a keyboard connected to the Pt-51 board via UART
