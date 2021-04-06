@@ -33,7 +33,7 @@ void lcd_init(void)
 	msdelay(4);
 	lcd_cmd(0x06);	// Entry mode, auto increment with no shift
 	msdelay(4);
-	lcd_cmd(0x0C);	// Display on, Curson off
+	lcd_cmd(0x0C);	// Display on, Cursor off
 	msdelay(4);
 	lcd_cmd(0x01);	// LCD clear
 	msdelay(4);

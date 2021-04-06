@@ -1,9 +1,7 @@
 #include <at89c5131.h>
-#include "lcd_p.h"		//Header file with LCD interfacing functions
-#include "serial_p.c"	//C file with UART interfacing functions
+#include "lcd.h"		//Header file with LCD interfacing functions
+#include "serial.c"	//C file with UART interfacing functions
 #include "tone.c"
-
-sbit LED=P1^7;
 
 //function definitions
 
@@ -18,8 +16,6 @@ void lcd_start(void)
 {
 	 lcd_cmd(0x82);
 	 lcd_write_string("Input please");
-	 // msdelay(2000);
-	 // lcd_cmd(0x01);
 }
 
 void lcd_inv(void)
@@ -34,9 +30,6 @@ void lcd_inv(void)
 void main(void)
 {
 	unsigned char ch=0;
-	
-	//Initialize port P1 for output from P1.7-P1.4
-	P1 = 0x0F;
 	
 	//Call initialization functions
 	lcd_init();
@@ -55,8 +48,8 @@ void main(void)
 
 			//Receive a character
 		
-			//Decide which test function to run based on character sent
-      //Displays the string on the terminal software
+			//Decide which morse code to run based on character sent
+
 			switch(ch)
 			{
 				case '1': transmit_string("User Pressed : 1\r\n");

@@ -7,8 +7,6 @@ bit tx_complete = 0,rx_complete = 0; //Bit flags for interrupts
 	Initialization function to be completed
 	Initializes UART peripheral for 8-bit transfer, 
 	1 start and 1 stop bits. 
-	
-	Please write TH1 value for required baud rate
 ***********************************************************/	
 void uart_init(void)
 {

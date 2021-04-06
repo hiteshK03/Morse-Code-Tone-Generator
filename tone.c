@@ -7,24 +7,9 @@ sbit out=P0^7;
 void timer0_isr(void) interrupt 1
 {
     TH0  = 0xEF;        //ReLoad the timer value
-    TL0  = 0x80;
+    TL0  = 0xB8;
     out = !out;        // Toggle the LED pin 
 }
-
-// unsigned int i;
-// void sdelay(unsigned int time)
-// {	
-// 	TMOD = 0x10;
-// 	for(i=0;i<time;i++)
-// 	{
-// 		TH1 = 0x63;
-// 		TL1 = 0xD6;
-// 		TR1 = 1;
-// 		while(TF1==0);
-// 		TR1 = 0;
-// 		TF1 = 0;
-// 	}
-// }
 
 void sdelay(unsigned int time)
 {
@@ -40,8 +25,8 @@ void timer_init(void)
 {
     TMOD = 0x01;       //Timer0 mode 1 
     TH0 = 0xEF;        //Load the timer value
-    TL0 = 0x80;
-    ET0 = 1;           //Enable TImer0 Interrupt
+    TL0 = 0xB8;
+    ET0 = 1;           //Enable Timer0 Interrupt
     EA = 1;            //Enable Global Interrupt
     out = !out;
     TR0 = 1;           //turn ON Timer zero	
@@ -76,6 +61,8 @@ void dash_s(void)
     TR0 = 0;
     sdelay(1000);
 }
+
+// Uncomment to debug working of dot and dash function or to tune the timer0 parameters
 
 // void main(void)
 // {
