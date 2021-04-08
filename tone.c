@@ -23,7 +23,7 @@ void sdelay(unsigned int time)
 
 void timer_init(void)
 {
-    TMOD = 0x01;       //Timer0 mode 1 
+    TMOD |= 0x01;       //Timer0 mode 1 
     TH0 = 0xEF;        //Load the timer value
     TL0 = 0xB8;
     ET0 = 1;           //Enable Timer0 Interrupt

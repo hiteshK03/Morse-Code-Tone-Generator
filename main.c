@@ -40,7 +40,6 @@ void main(void)
 	
 	while(1)
 	{	
-			uart_init();
 			transmit_string("Press a character\r\n");
 			lcd_start();
 			ch = receive_char();
